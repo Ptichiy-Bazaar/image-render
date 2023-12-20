@@ -11,7 +11,7 @@ export const queryParse = <T = {}>(url: string): [string, T] => {
     for (const rows of params.split('&')) {
       const [key, value] = rows.split('=');
       if (key) {
-        (object as any)[key] = decodeURI(value);
+        (object as any)[key] = decodeURIComponent(value);
       }
     }
   }
