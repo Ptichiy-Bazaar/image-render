@@ -9,4 +9,4 @@ RUN bun install --frozen-lockfile
 COPY . .
 
 EXPOSE 3001
-CMD [ "bun run index.tsx" ]
+ENTRYPOINT [ "bun", "run", "index.tsx" ]
