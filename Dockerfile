@@ -12,7 +12,7 @@ FROM deps as server
 COPY . .
 RUN bun build --compile ./index.ts --outfile=server
 
-FROM ubuntu:mantic as server
+FROM ubuntu:mantic
 
 COPY --from=server /build/server ./server
 EXPOSE 3001
