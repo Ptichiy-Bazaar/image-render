@@ -104,5 +104,5 @@ Bun.serve({
       console.log(((performance.now() - time) | 0) + 'ms', new Date().toISOString(), res.status, murl, params);
     }
   },
-  port: 3001
+  port: 80
 });
