@@ -1,4 +1,4 @@
-FROM oven/bun:1-alpine as deps
+FROM oven/bun:1.0.19-alpine as deps
 
 WORKDIR /build
 
