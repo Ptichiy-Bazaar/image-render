@@ -11,10 +11,14 @@ export const queryParse = <T = {}>(url: string): [string, T] => {
     for (const rows of params.split('&')) {
       const [key, value] = rows.split('=');
       if (key) {
-        (object as any)[key] = decodeURIComponent(value);
+        (object as any)[key] = decodeQueryParam(value);
       }
     }
   }
 
   return [url.slice(0, url.length - (execResult?.[0].length ?? 0)), object];
 };
+
+function decodeQueryParam(p: string) {
+  return decodeURIComponent(p.replace(/\+/g, " "));
+}
